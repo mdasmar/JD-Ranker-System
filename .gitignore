@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+.agents/
+candidates.jsonl
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+~$*.docx
+data/full_test_submission.csv
+data/venv_sample_submission.csv

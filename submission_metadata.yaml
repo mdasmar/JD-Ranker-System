@@ -1,0 +1,55 @@
+team_name: "Solo_Ranker"
+
+primary_contact:
+  name: "Md Asmar"
+  email: "24051033@kiit.ac.in"
+  phone: "+91-8825237173"
+
+team_members:
+  - name: "Md Asmar"
+    email: "24051033@kiit.ac.in"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/YOUR_REPO"
+
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local Windows workstation"
+  cpu_cores: 8
+  ram_gb: 32
+  python_version: "3.14.5"
+  os: "Microsoft Windows NT 10.0.26200.0"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "ChatGPT/Codex"
+
+ai_usage_summary: |
+  Used ChatGPT/Codex to check errors in code,create a streamlit sandbox
+  and verify the reproduction and CSV validation commands. No candidate data was
+  sent to an external ranking API during rank.py execution.
+
+methodology_summary: |
+  Rule-based CPU ranker for India-focused ML/search/retrieval hiring. Candidates
+  are scored with weighted components for relevant stack terms, career trajectory,
+  production delivery evidence, years of experience, location, activity, recruiter
+  responsiveness, availability, verification, and recruiter engagement signals.
+  The ranker penalizes weak or unrelated roles, AI keyword stuffing without
+  production evidence, template-like seniority claims, long notice periods, and
+  inactive profiles. It streams candidates from candidates.jsonl, keeps only the
+  top 100 with a heap, sorts by score descending and candidate_id tie-break, and
+  writes candidate_id, rank, score, and human-readable reasoning to submission.csv.
+
+declarations:
+  read_submission_spec: true        
+  code_is_original_work: true       
+  no_collusion: true                
+  honeypot_check_done: true         
+  reproduction_tested: true         
